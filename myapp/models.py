@@ -2,7 +2,7 @@ from django.db import models
 
 class Entry(models.Model):
     name = models.CharField(max_length=100)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
 
