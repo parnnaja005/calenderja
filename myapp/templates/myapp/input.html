@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="django form with utf-8">
     <meta name="author" content="wichit2s">
-    <title>Linux Services</title>
+    <title>Notebook</title>
 
     {% load static %}
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <style>
       .filled {
@@ -20,15 +24,31 @@
       }
     </style>
   </head>
-  <body>
-    <nav> <h1> Linux Services Page </h1> </nav>
-    <div>
+  <body style="color: black;"><br><br>
+    <center><nav> <h1> New Notebook </h1> </nav></center>
+    <center><div>
       <section class="filled">
         <form action="input" method="POST" enctype="multipart/form-data;charset=UTF-8">
           {% csrf_token %}
-          <div class="spacing"><input class="filled" type="text" name="name" value="Name Activities"/></div>
-          <div class="spacing"><input class="filled" type="text" name="description" value="Description"/></div>
-          <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
+
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Name Notebook</span>
+              </div>
+              <input class="form-control" type="text" name="name" value="Name" aria-describedby="basic-addon1">
+          </div><br>
+
+          {% comment %} <div class="spacing"><input class="filled" type="text" name="name" value="Name Activities"/></div> {% endcomment %}
+          
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Description</span>
+              </div>
+              <input class="form-control" type="text" name="description" value="Description" aria-describedby="basic-addon1">
+          </div>
+          
+          {% comment %} <div class="spacing"><input class="filled" type="text" name="description" value="Description"/></div> {% endcomment %}
+          <center><button class="btn btn-outline-dark"  type="submit">Submit</button></center><br>
         </form>
       </section>
       <div>
@@ -46,11 +66,11 @@
         </tr>
         {% endfor %}
       </table> 
-      </div>
-    </div>
+      </div></center>
+    </div><br>
     <footer>
       <div>
-        <div>Copyright &copy; 2019 </div>
+        <div>Aiy &copy; 2019 </div>
       </div>
     </footer>
   </body>
